@@ -11,6 +11,8 @@
 
     <link rel="canonical" href="https://getbootstrap.com/docs/5.1/examples/pricing/">
 
+    <!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/docs-searchbar.js@2.0.1/dist/cdn/docs-searchbar.min.css" /> -->
+
 
 
     <!-- Bootstrap core CSS -->
@@ -49,6 +51,11 @@
     <link href="pricing.css" rel="stylesheet">
 
     <link rel="stylesheet" type="text/css" href="{{ mix('css/app.css') }}">
+
+    <!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/instantsearch.css@7.3.1/themes/reset-min.css" integrity="sha256-t2ATOGCtAIZNnzER679jwcFcKYfLlw01gli6F6oszk8=" crossorigin="anonymous"> -->
+
+    <!-- <script src="https://cdn.jsdelivr.net/npm/docs-searchbar.js@2.0.1/dist/cdn/docs-searchbar.min.js"></script> -->
+    <!-- <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14/dist/vue.js"></script> -->
 </head>
 
 <body>
@@ -142,8 +149,7 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous">
     </script>
-
-
+  
     
 </body>
 

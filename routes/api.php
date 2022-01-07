@@ -4,6 +4,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
 use App\Http\Controllers\JobController;
+use App\Models\Job;
 
 /*
 |--------------------------------------------------------------------------
@@ -21,3 +22,11 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 });
 
 Route::resource('/jobs', JobController::class);
+
+Route::post('/search', function (Request $request) {
+    
+    $data = $request->getContent();
+    $data = json_decode($data, true);
+
+    return Job::search($data['term'])->get();
+});

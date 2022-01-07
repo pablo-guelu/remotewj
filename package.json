@@ -1,25 +1,35 @@
 {
-    "private": true,
-    "scripts": {
-        "dev": "npm run development",
-        "development": "mix",
-        "watch": "mix watch",
-        "watch-poll": "mix watch -- --watch-options-poll=1000",
-        "hot": "mix watch --hot",
-        "prod": "npm run production",
-        "production": "mix --production"
-    },
-    "devDependencies": {
-        "axios": "^0.21",
-        "laravel-mix": "^6.0.6",
-        "lodash": "^4.17.19",
-        "postcss": "^8.1.14",
-        "vue-loader": "^16.8.1"
-    },
-    "dependencies": {
-        "bootstrap-icons": "^1.7.0",
-        "vue": "^3.2.20",
-        "vue-axios": "^3.3.7",
-        "vue-router": "^4.0.12"
-    }
+  "name": "html",
+  "version": "1.0.0",
+  "description": "<p align=\"center\"><a href=\"https://laravel.com\" target=\"_blank\"><img src=\"https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg\" width=\"400\"></a></p>",
+  "main": "webpack.mix.js",
+  "directories": {
+    "test": "tests"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "npm run development",
+    "development": "mix",
+    "watch": "mix watch",
+    "watch-poll": "mix watch -- --watch-options-poll=1000",
+    "hot": "mix watch --hot",
+    "prod": "npm run production",
+    "production": "mix --production"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@meilisearch/instant-meilisearch": "^0.5.10",
+    "algoliasearch": "^4.11.0",
+    "axios": "^0.24.0",
+    "instantsearch.js": "^4.37.1",
+    "laravel-mix": "^6.0.39",
+    "vue": "^3.2.26",
+    "vue-axios": "^3.4.0",
+    "vue-instantsearch": "^4.3.0",
+    "vue-router": "^4.0.12"
+  },
+  "devDependencies": {
+    "vue-loader": "^16.8.3"
+  }
 }

@@ -109,4 +109,10 @@ class JobController extends Controller
     {
         //
     }
+
+    // public function search(Request $request) {
+    //     dd($request);
+    //     $jobs = Job::search($request)->get();
+    //     return response()->json(['jobs' => $request]);
+    // }
 }

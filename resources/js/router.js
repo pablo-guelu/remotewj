@@ -4,6 +4,7 @@ import DisplaylistComponent from './components/DisplaylistComponent';
 import FormComponent from './components/FormComponent';
 import JobDetailComponent from './components/JobDetailComponent';
 import SearchComponent from './components/SearchComponent';
+import MeilisearchComponent from './components/MeilisearchComponent';
 
 const routes = [
     {
@@ -25,7 +26,7 @@ const routes = [
     {
         path: '/search',
         name: 'search',
-        component: SearchComponent,
+        component: MeilisearchComponent,
     },
 
 ]
