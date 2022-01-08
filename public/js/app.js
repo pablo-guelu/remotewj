@@ -30456,10 +30456,17 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ });
 /* harmony import */ var vue__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! vue */ "./node_modules/vue/dist/vue.esm-bundler.js");
 
-var _hoisted_1 = {
-  slot: "item",
-  "slot-scope": "{ item }"
-};
+
+var _hoisted_1 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("header", {
+  "class": "header"
+}, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("h1", {
+  "class": "header-title"
+}, "Search with MeiliSearch")], -1
+/* HOISTED */
+);
+
+var _hoisted_2 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)("🔎");
+
 function render(_ctx, _cache, $props, $setup, $data, $options) {
   var _component_ais_search_box = (0,vue__WEBPACK_IMPORTED_MODULE_0__.resolveComponent)("ais-search-box");
 
@@ -30467,14 +30474,26 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
 
   var _component_ais_instant_search = (0,vue__WEBPACK_IMPORTED_MODULE_0__.resolveComponent)("ais-instant-search");
 
-  return (0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createBlock)(_component_ais_instant_search, {
-    "search-client": $data.searchClient,
-    "index-name": "jobs"
+  return (0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("div", null, [_hoisted_1, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_ais_instant_search, {
+    "index-name": "jobs",
+    "search-client": $data.searchClient
   }, {
     "default": (0,vue__WEBPACK_IMPORTED_MODULE_0__.withCtx)(function () {
-      return [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_ais_search_box), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_ais_hits, null, {
-        "default": (0,vue__WEBPACK_IMPORTED_MODULE_0__.withCtx)(function () {
-          return [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_1, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("h2", null, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)(_ctx.item.name), 1
+      return [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" Widgets "), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_ais_search_box, {
+        placeholder: "Search for jobs..."
+      }, {
+        "submit-icon": (0,vue__WEBPACK_IMPORTED_MODULE_0__.withCtx)(function () {
+          return [_hoisted_2];
+        }),
+        _: 1
+        /* STABLE */
+
+      }), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_ais_hits, null, {
+        item: (0,vue__WEBPACK_IMPORTED_MODULE_0__.withCtx)(function (_ref) {
+          var item = _ref.item;
+          return [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", null, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("h3", null, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)(item.title), 1
+          /* TEXT */
+          ), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("p", null, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)(item.description), 1
           /* TEXT */
           )])];
         }),
@@ -30488,7 +30507,7 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
 
   }, 8
   /* PROPS */
-  , ["search-client"]);
+  , ["search-client"])]);
 }
 
 /***/ }),
@@ -30690,7 +30709,7 @@ __webpack_require__.r(__webpack_exports__);
 
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default()(function(i){return i[1]});
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, "\nbody {\n  font-family: sans-serif;\n  padding: 1em;\n}\n", ""]);
+___CSS_LOADER_EXPORT___.push([module.id, "\nbody,\nh1 {\n  margin: 0;\n  padding: 0;\n}\nbody {\n  font-family: -apple-system, BlinkMacSystemFont, \"Segoe UI\", Roboto, Helvetica,\n    Arial, sans-serif, \"Apple Color Emoji\", \"Segoe UI Emoji\", \"Segoe UI Symbol\";\n}\n.ais-SearchBox-form {\n  width: 50%;\n  height: 3em;\n}\n.ais-SearchBox-input {\n  width: 90%;\n  height: 100%;\n  border: 1px solid #c4c8d8;\n  border-radius: 5px;\n  padding: .5em;\n}\n.ais-SearchBox-submit {\n  height: 100%;\n  width: 10%;\n}\n\n/*\n** Over write highlighted results style\n*/\n.ais-Highlight-highlighted {\n  background: #e4135973;\n  padding: 1px;\n}\n/*\n** Over write numbers of results on a line\n*/\n.ais-Hits-item {\n  margin-bottom: 1em;\n  width: calc(50% - 1rem);\n}\n.disclaimer {\n  margin-left: 1em;\n}\n.hit-name {\n  margin-bottom: 0.5em;\n}\n.hit-info {\n  font-size: 90%;\n}\n.header {\n  display: flex;\n  align-items: center;\n  min-height: 50px;\n  padding: 0.5rem 1rem;\n  background-image: linear-gradient(to right, #5b0723, #e41359);\n  color: #fff;\n  margin-bottom: 1rem;\n}\n.header-title {\n  font-size: 1.2rem;\n  font-weight: normal;\n}\n.header-subtitle {\n  font-size: 1.2rem;\n}\n.container {\n  padding: 1rem;\n}\n.ais-InstantSearch {\n  max-width: 960px;\n  overflow: hidden;\n  margin: 0;\n}\n.search-panel__filters {\n  float: left;\n  width: 200px;\n}\n.search-panel__results {\n  margin-left: 210px;\n}\n.ais-SearchBox {\n  margin-bottom: 2rem;\n}\n.ais-Pagination {\n  margin: 2rem auto;\n  text-align: center;\n}\n/*\n** Styling for motivation section\n*/\n.motivation {\n  text-transform: capitalize;\n  color: #989eb5;\n  text-transform: capitalize;\n  margin: 10px 0;\n  font-style: italic;\n}\n", ""]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
