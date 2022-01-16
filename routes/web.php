@@ -1,6 +1,8 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use Illuminate\Support\Facades\Mail;
+use App\Mail\SubscriberConfirm;
 
 /*
 |--------------------------------------------------------------------------
@@ -15,8 +17,13 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
     return view('welcome');
-});
+})->name('home');
 
 Route::fallback(function () {
     return view('welcome');
+});
+
+
+Route::get('subscription_email', function(){
+	Mail::to('pablo.guelu@gmail.com')->send(new SubscriberConfirm);
 });
