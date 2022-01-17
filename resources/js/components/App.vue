@@ -1,7 +1,7 @@
 <template>
   <div>
     <div class="container py-3">
-      <header class="sticky-top" style="background-color: white;">
+      <header class="sticky-top" style="background-color: white">
         <div
           class="
             d-flex
@@ -26,32 +26,40 @@
           </a>
 
           <nav class="d-inline-flex mt-2 mt-md-0 ms-md-auto">
+            <div class="mx-3">
+              <router-link :to="{ name: 'list' }">Job List</router-link>
+            </div>
 
-              <div class="mx-3">
-                <router-link :to="{ name: 'list' }">Job List</router-link>
-              </div>
+            <div class="mx-3">
+              <router-link :to="{ name: 'postJob' }">Post a Job</router-link>
+            </div>
 
-              <div class="mx-3">
-                <router-link :to="{ name: 'postJob' }">Post a Job</router-link>
-              </div>
-
-              <div class="mx-3">
-                <router-link :to="{ name: 'search' }">Search Jobs</router-link>
-              </div>
-
+            <div class="mx-3">
+              <router-link :to="{ name: 'search' }">Search Jobs</router-link>
+            </div>
           </nav>
         </div>
       </header>
 
       <main>
-        <router-view></router-view>
+        <router-view> </router-view>
       </main>
     </div>
   </div>
 </template>
 
 <script>
-export default {};
+
+
+  export default {
+    data() {
+      return {
+      }
+    },
+    methods: {
+      
+    }
+  };
 </script>
 
 <style>

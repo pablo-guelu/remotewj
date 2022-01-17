@@ -1,20 +1,32 @@
 <template>
-    <div class="list-group">
+
+    <div>
+
+        <subscribe-component/>
+
+
+        <div class="list-group">
         <item-component v-for="job in jobs"
         :job="job"
         :key="job.id">
         </item-component>        
     </div>
+
+    </div>
+
+    
 </template>
 
 <script>
 
 import ItemComponent from './ItemComponent.vue';
+import SubscribeComponent from './SubscribeComponent.vue';
 
 export default {
 
     components: {
-        ItemComponent
+        ItemComponent,
+        SubscribeComponent
     },
 
     data() {

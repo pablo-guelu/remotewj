@@ -20,13 +20,14 @@
   "license": "ISC",
   "dependencies": {
     "@meilisearch/instant-meilisearch": "^0.5.10",
-    "algoliasearch": "^4.11.0",
+    "algoliasearch": "^4.12.0",
     "axios": "^0.24.0",
     "instantsearch.js": "^4.37.1",
     "laravel-mix": "^6.0.39",
+    "qs": "^6.10.3",
     "vue": "^3.2.26",
     "vue-axios": "^3.4.0",
-    "vue-instantsearch": "^4.3.0",
+    "vue-instantsearch": "^4.3.1",
     "vue-router": "^4.0.12"
   },
   "devDependencies": {
