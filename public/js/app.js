@@ -29648,10 +29648,24 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
+  data: function data() {
+    return {
+      lead: {
+        email: ''
+      }
+    };
+  },
   methods: {
     sendEmail: function sendEmail() {
+      this.axios.post('/lead', this.lead).then(function (response) {
+        console.log(response.data);
+      })["catch"](function (error) {
+        return console.log(error.response.data.errors);
+      });
       this.axios.get('/subscription_email').then(function (response) {
         console.log(response.data);
+      })["catch"](function (error) {
+        return console.log(error.response.data.errors);
       });
       document.getElementsByClassName('subscribe-card')[0].innerHTML = "<h1> Text Changed </h1>";
     }
@@ -30650,26 +30664,33 @@ var _hoisted_4 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementV
 /* HOISTED */
 );
 
-var _hoisted_5 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
+var _hoisted_5 = {
   "class": "w-80 row g-0 justify-content-evenly flex-nowrap"
-}, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("input", {
-  type: "email",
-  "class": "col-8 p-2 me-2",
-  placeholder: "Your email..."
-}), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("button", {
+};
+
+var _hoisted_6 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("button", {
   "class": "btn btn-outline-primary col-4 fs-5",
   type: "submit"
-}, " Subscribe ")], -1
+}, " Subscribe ", -1
 /* HOISTED */
 );
 
-var _hoisted_6 = [_hoisted_5];
 function render(_ctx, _cache, $props, $setup, $data, $options) {
   return (0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("div", _hoisted_1, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_2, [_hoisted_3, _hoisted_4, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("form", {
-    onSubmit: _cache[0] || (_cache[0] = (0,vue__WEBPACK_IMPORTED_MODULE_0__.withModifiers)(function () {
+    onSubmit: _cache[1] || (_cache[1] = (0,vue__WEBPACK_IMPORTED_MODULE_0__.withModifiers)(function () {
       return $options.sendEmail && $options.sendEmail.apply($options, arguments);
     }, ["prevent"]))
-  }, _hoisted_6, 32
+  }, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_5, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.withDirectives)((0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("input", {
+    type: "email",
+    "class": "col-8 p-2 me-2",
+    placeholder: "Your email...",
+    name: "subscriptionEmail",
+    "onUpdate:modelValue": _cache[0] || (_cache[0] = function ($event) {
+      return $data.lead.email = $event;
+    })
+  }, null, 512
+  /* NEED_PATCH */
+  ), [[vue__WEBPACK_IMPORTED_MODULE_0__.vModelText, $data.lead.email]]), _hoisted_6])], 32
   /* HYDRATE_EVENTS */
   )])]);
 }

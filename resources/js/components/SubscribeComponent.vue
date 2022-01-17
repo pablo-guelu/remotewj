@@ -9,6 +9,8 @@
             type="email"
             class="col-8 p-2 me-2"
             placeholder="Your email..."
+            name='subscriptionEmail'
+            v-model="lead.email"
           />
           <button class="btn btn-outline-primary col-4 fs-5" type="submit">
             Subscribe
@@ -22,13 +24,28 @@
 
 <script>
 export default {
+
+    data() {
+        return {
+            lead: {
+                email: '',
+            },
+        }
+    },
+
     methods: {
         sendEmail () {
+
+             this.axios.post('/lead', this.lead ).then(response => {
+                console.log(response.data)
+            }).catch( error => console.log(error.response.data.errors));
+
             this.axios.get('/subscription_email').then(response => {
                 console.log(response.data);
-            })
+            }).catch( error => console.log(error.response.data.errors));
 
             document.getElementsByClassName('subscribe-card')[0].innerHTML = `<h1> Text Changed </h1>`;
+
         }
     }
 };

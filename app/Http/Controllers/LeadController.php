@@ -5,9 +5,17 @@ namespace App\Http\Controllers;
 use App\Http\Requests\StoreLeadRequest;
 use App\Http\Requests\UpdateLeadRequest;
 use App\Models\Lead;
+use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Validator;
 
 class LeadController extends Controller
 {
+
+    // public function __construct()
+    // {
+    //     $this->authorizeResource(Lead::class, 'lead');
+    // }
+
     /**
      * Display a listing of the resource.
      *
@@ -34,9 +42,27 @@ class LeadController extends Controller
      * @param  \App\Http\Requests\StoreLeadRequest  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(StoreLeadRequest $request)
+    public function store(Request $request)
     {
-        //
+
+        Validator::make($request->all(), [
+            'email' => 'required|email|unique:leads,email|'
+        ])->validate();
+
+        // if ($validator->fails()) {
+        //     return redirect('/')
+        //     ->withErrors($validator)
+        //     ->withInput();
+        // };
+
+        // $validated = $validator->validated();
+
+        $lead = new Lead();
+        $lead->email = $request['email'];
+        $lead->save();
+
+        return response()->json(['lead' => $lead]);
+        // return $request;
     }
 
     /**
