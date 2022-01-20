@@ -41,15 +41,15 @@ class JobController extends Controller
     {
         // dd($request);
 
-        $validator = Validator::make($request->all(),[
-            'job.title' => 'required',
-            'job.description' => 'required',
-            'job.url' => 'required',
-            'job.category' => 'required',
-            'job.region' => 'required',
-            'job.timezone' => 'required',
+        // $validator = Validator::make($request->all(),[
+        //     'job.title' => 'required',
+        //     'job.description' => 'required',
+        //     'job.url' => 'required',
+        //     'job.category' => 'required',
+        //     'job.region' => 'required',
+        //     'job.timezone' => 'required',
 
-        ]);
+        // ]);
 
         $job = new Job();
         $job->title = $request['job']['title'];
@@ -61,7 +61,10 @@ class JobController extends Controller
 
         $job->save();
 
-        return response()->json(['job' => $job]);
+        $jobs = Job::all();
+        $jobs->searchable();
+
+        return response()->json(['job' => $job])->redirect('/');
 
     }
 
