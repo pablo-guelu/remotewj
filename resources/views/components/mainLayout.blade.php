@@ -9,10 +9,6 @@
 
     <link rel="canonical" href="https://getbootstrap.com/docs/5.1/examples/pricing/">
 
-    <!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/docs-searchbar.js@2.0.1/dist/cdn/docs-searchbar.min.css" /> -->
-
-
-
     <!-- Bootstrap core CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
@@ -49,14 +45,10 @@
     <link href="pricing.css" rel="stylesheet">
 
     <link rel="stylesheet" type="text/css" href="{{ mix('css/app.css') }}">
-
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/instantsearch.css@7.3.1/themes/reset-min.css" integrity="sha256-t2ATOGCtAIZNnzER679jwcFcKYfLlw01gli6F6oszk8=" crossorigin="anonymous">
-
-   
- 
-    <!-- or include the full Satellite theme -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/instantsearch.css@7.4.5/themes/satellite-min.css" integrity="sha256-TehzF/2QvNKhGQrrNpoOb2Ck4iGZ1J/DI4pkd2oUsBc=" crossorigin="anonymous">
     
+    <!-- client side render -->
+    <script defer src="{{ mix('js/app-client.js') }}"></script>
+
 </head>
 
 <body>
@@ -145,17 +137,13 @@
         </footer>
     </div>
 
-    <script src="{{ mix('js/app.js') }}"></script>
+    {!! ssr('js/app-server.js')->render() !!}
 
    
     {{-- bootstrap JS --}}
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous">
     </script>
-
-    <script src="https://polyfill.io/v3/polyfill.min.js?features=default%2CArray.prototype.find%2CArray.prototype.includes%2CPromise%2CObject.assign%2CObject.entries"></script>
-
-  
     
 </body>
 

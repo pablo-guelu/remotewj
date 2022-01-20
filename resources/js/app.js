@@ -13,5 +13,6 @@ vueApp.use(VueAxios, axios);
 vueApp.use(InstantSearch);
 vueApp.use(router);
 
-vueApp.mount('#app');
+// vueApp.mount('#app');
 
+export default vueApp;
