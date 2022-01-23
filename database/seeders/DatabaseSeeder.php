@@ -17,8 +17,11 @@ class DatabaseSeeder extends Seeder
     public function run()
     {
         for ($job = 0; $job < 10; $job++) {
+
+            $company = Company::factory()->create();
+
             Job::factory()
-            ->for(Company::factory())
+            ->for($company)
             ->create();
         }
     }

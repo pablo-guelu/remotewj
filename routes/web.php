@@ -4,6 +4,8 @@ use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Mail;
 use App\Mail\SubscriberConfirm;
 use App\Http\Controllers\LeadController;
+use App\Models\Job;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -17,13 +19,20 @@ use App\Http\Controllers\LeadController;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('home', ['jobs' => Job::all()]);
 })->name('home');
 
 Route::fallback(function () {
-    return view('welcome');
+    return view('home');
 });
 
+Route::get('/searchJob', function () {
+    return view('searchJob', ['jobs' => Job::all()]);
+})->name('search');
+
+Route::get('/postJob', function () {
+    return view('postJob');
+})->name('post');
 
 Route::get('subscription_email', function(){
 	Mail::to('pablo.guelu@gmail.com')->send(new SubscriberConfirm);

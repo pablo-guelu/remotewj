@@ -64,7 +64,7 @@ class JobController extends Controller
         $jobs = Job::all();
         $jobs->searchable();
 
-        return response()->json(['job' => $job])->redirect('/');
+        return response()->json(['job' => $job]);
 
     }
 
