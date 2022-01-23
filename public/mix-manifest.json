@@ -1,5 +1,5 @@
 {
-    "/js/app-server.js": "/js/app-server.js",
-    "/js/app-client.js": "/js/app-client.js",
+    "/js/searchJob.js": "/js/searchJob.js",
+    "/js/postJob.js": "/js/postJob.js",
     "/css/app.css": "/css/app.css"
 }

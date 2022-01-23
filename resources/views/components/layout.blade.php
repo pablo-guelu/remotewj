@@ -1,0 +1,96 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Remote Weekend Job</title>
+
+    <link rel="canonical" href="https://getbootstrap.com/docs/5.1/examples/pricing/">
+
+    <!-- Bootstrap core CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+
+    <link rel="stylesheet" type="text/css" href="{{ mix('css/app.css') }}">
+
+    <style>
+        .bd-placeholder-img {
+            font-size: 1.125rem;
+            text-anchor: middle;
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            user-select: none;
+        }
+
+        @media (min-width: 768px) {
+            .bd-placeholder-img-lg {
+                font-size: 3.5rem;
+            }
+        }
+    </style>
+
+</head>
+
+<body>
+
+    <div class="container py-3">
+
+        @if ($errors->any())
+        <div class="alert alert-danger">
+            <ul>
+                @foreach ($errors->all() as $error)
+                <li>{{ $error }}</li>
+                @endforeach
+            </ul>
+        </div>
+        @endif
+
+
+        <header class="sticky-top" style="background-color: white">
+            <div class="
+                    d-flex
+                    flex-column flex-md-row
+                    align-items-center
+                    pb-3
+                    mb-2
+                    border-bottom
+                ">
+                <a href="/" class="d-flex align-items-center text-dark text-decoration-none">
+                    <img src="/img/earth.svg" alt="logo" style="height: 6vh" class="m-2" />
+                    <span class="fs-4" style="font-weight: bold;">Remote Weekend Job</span>
+                </a>
+
+                <nav class="d-inline-flex mt-2 mt-md-0 ms-md-auto">
+
+                    <div class="mx-3">
+                        <a href="/searchJob">
+                            <button class="btn btn-primary btn-lg btn-block">
+                                Search Jobs on Weekends
+                            </button>
+                        </a>
+                    </div>
+
+                    <div class="mx-3">
+                        <a href="/postJob">
+                            <button class="btn btn-success btn-lg btn-block">
+                                Post a Job
+                            </button>
+                        </a>
+                    </div>
+                </nav>
+            </div>
+        </header>
+
+        {{ $slot }}
+
+    </div>
+
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous">
+    </script>
+
+</body>
+
+</html>

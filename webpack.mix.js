@@ -11,8 +11,9 @@ const mix = require('laravel-mix');
  |
  */
 
-mix.js('resources/js/app-server.js', 'public/js')
-    .js('resources/js/app-client.js', 'public/js')
+mix.js('resources/js/searchJob.js', 'public/js')
+    .js('resources/js/postJob.js', 'public/js')
     .postCss('resources/css/app.css', 'public/css', [
         //
-    ]).vue();
+    ]).vue()
+

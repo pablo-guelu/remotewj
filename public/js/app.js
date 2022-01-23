@@ -30705,6 +30705,9 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
 /* harmony import */ var vue__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! vue */ "./node_modules/vue/dist/vue.esm-bundler.js");
 /* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! axios */ "./node_modules/axios/index.js");
 /* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(axios__WEBPACK_IMPORTED_MODULE_1__);
@@ -30723,8 +30726,9 @@ __webpack_require__(/*! ./bootstrap */ "./resources/js/bootstrap.js");
 var vueApp = (0,vue__WEBPACK_IMPORTED_MODULE_0__.createApp)(_components_App_vue__WEBPACK_IMPORTED_MODULE_4__["default"]);
 vueApp.use(vue_axios__WEBPACK_IMPORTED_MODULE_2__["default"], (axios__WEBPACK_IMPORTED_MODULE_1___default()));
 vueApp.use(vue_instantsearch_vue3_es__WEBPACK_IMPORTED_MODULE_5__["default"]);
-vueApp.use(_router__WEBPACK_IMPORTED_MODULE_3__["default"]);
-vueApp.mount('#app');
+vueApp.use(_router__WEBPACK_IMPORTED_MODULE_3__["default"]); // vueApp.mount('#app');
+
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (vueApp);
 
 /***/ }),
 
