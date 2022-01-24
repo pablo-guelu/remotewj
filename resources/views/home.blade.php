@@ -24,10 +24,10 @@
                 <div class="h-100 p-3 bg-light border rounded-3 shadow-sm subscribe-card">
                     <h2>Subscribe to find the job you need</h2>
                     <p>Receive weekly alerts of new job offerings to work on weekends</p>
-                    <form>
+                    <form onsubmit="return false">
                         <div class="w-80 row g-0 justify-content-evenly flex-nowrap">
-                            <input type="email" class="col-8 p-2 me-2" placeholder="Your email..." name='subscriptionEmail' v-model="lead.email" />
-                            <button class="btn btn-outline-primary col-4 fs-5" type="submit">
+                            <input type="email" class="col-8 p-2 me-2" placeholder="Your email..." id='subscriptionEmail' />
+                            <button onclick="createLead()" class="btn btn-outline-primary col-4 fs-5" type="submit">
                                 Subscribe
                             </button>
                         </div>
@@ -59,6 +59,8 @@
         </section>
 
     </div>
+
+    <script src=" {{ mix ('js/app.js') }}"></script>
 
 
 </x-layout>

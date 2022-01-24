@@ -2,8 +2,8 @@
 
 namespace App\Http\Controllers;
 
-use App\Http\Requests\StoreLeadRequest;
-use App\Http\Requests\UpdateLeadRequest;
+use App\Mail\SubscriberConfirm;
+use Illuminate\Support\Facades\Mail;
 use App\Models\Lead;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
@@ -49,20 +49,15 @@ class LeadController extends Controller
             'email' => 'required|email|unique:leads,email|'
         ])->validate();
 
-        // if ($validator->fails()) {
-        //     return redirect('/')
-        //     ->withErrors($validator)
-        //     ->withInput();
-        // };
-
-        // $validated = $validator->validated();
 
         $lead = new Lead();
         $lead->email = $request['email'];
         $lead->save();
 
+        Mail::to($lead->email)->send(new SubscriberConfirm);
+
         return response()->json(['lead' => $lead]);
-        // return $request;
+  
     }
 
     /**
@@ -94,7 +89,7 @@ class LeadController extends Controller
      * @param  \App\Models\Lead  $lead
      * @return \Illuminate\Http\Response
      */
-    public function update(UpdateLeadRequest $request, Lead $lead)
+    public function update(Request $request, Lead $lead)
     {
         //
     }
