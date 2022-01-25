@@ -32,5 +32,5 @@ createLead = () => {
 
         document.getElementById('subscriptionEmail').value = '';
     });
-    // console.log('ok');
+    
 }

@@ -39,7 +39,7 @@
             <h2 class="text-center m-5"> Featured Jobs </h2>
             @foreach ($jobs as $job)
             <div class="m-3 border rounded-3 shadow-sm">
-                <a class="list-group-item list-group-item-action d-flex gap-3 py-3" aria-current="true">
+                <a href="/jobs/{{$job->id}}" class="list-group-item list-group-item-action d-flex gap-3 py-3" aria-current="true">
                     <img src="{{$job->company->logo}}" alt="{{$job->company->name}}" width="32" height="32" class="rounded-circle flex-shrink-0" />
                     <div class="d-flex gap-2 w-100 justify-content-between">
                         <div>

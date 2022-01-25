@@ -19658,7 +19658,7 @@ createLead = function createLead() {
     console.log(error.response.data.errors);
     document.getElementsByClassName('alert-messages')[0].innerHTML = "<div class=\"alert alert-warning alert-dismissible fade show\" role=\"alert\">\n            ".concat(error.response.data.errors.email, "\n            <button type=\"button\" class=\"btn-close\" data-bs-dismiss=\"alert\" aria-label=\"Close\"></button>\n        </div>");
     document.getElementById('subscriptionEmail').value = '';
-  }); // console.log('ok');
+  });
 };
 })();
 

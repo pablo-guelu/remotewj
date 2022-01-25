@@ -32,5 +32,8 @@ Route::get('/postJob', function () {
     return view('postJob');
 })->name('post');
 
+Route::get('/jobs/{id}', function ($id) {
+    return view('jobDetail', ['job' => Job::find($id)]);
+});
 
 Route::resource('/lead', LeadController::class);
