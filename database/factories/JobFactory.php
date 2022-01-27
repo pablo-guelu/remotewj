@@ -23,21 +23,22 @@ class JobFactory extends Factory
     {
         return [
             'title' => $this->faker->jobTitle(),
-            'hours' => 24,
+            'category' => $this->faker->randomElement(['fullstack', 'frontend', 'backend', 'design']),
+            'days' => 3,
+            'isremote' => 'remote',
             'description' => $this->faker->text(),
             'url' => $this->faker->url(),
-            'category' => $this->faker->randomElement(['fullstack', 'frontend', 'backend', 'design']),
-            'timezone' => $this->faker->randomElement([
-                '(GMT-06:00) Central America',
-                '(GMT-06:00) Guadalajara, Mexico City, Monterrey',
-                '(GMT-06:00) Saskatchewan', 
-                '(GMT-05:00) Bogota, Lima, Quito',
-                '(GMT-05:00) Eastern Time (US & Canada)'
-            ]),
-            'region' => $this->faker->randomElement([
-                'Asia', 'Africa', 'North America', 'South America', 'Europe', 'Australia/New Zealand'
-            ]),
-            'type' => $this->faker->randomElement(['contract', 'full-time']),
+            // 'timezone' => $this->faker->randomElement([
+            //     '(GMT-06:00) Central America',
+            //     '(GMT-06:00) Guadalajara, Mexico City, Monterrey',
+            //     '(GMT-06:00) Saskatchewan', 
+            //     '(GMT-05:00) Bogota, Lima, Quito',
+            //     '(GMT-05:00) Eastern Time (US & Canada)'
+            // ]),
+            // 'region' => $this->faker->randomElement([
+            //     'Asia', 'Africa', 'North America', 'South America', 'Europe', 'Australia/New Zealand'
+            // ]),
+            // 'type' => $this->faker->randomElement(['contract', 'full-time']),
         ];
     }
 }

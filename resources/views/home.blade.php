@@ -22,7 +22,7 @@
         <section>
             <div class="py-5 text-center container">
                 <div class="h-100 p-3 bg-light border rounded-3 shadow-sm subscribe-card">
-                    <h2>Subscribe to find the job you need</h2>
+                    <h2>Subscribe and find the job you need <span> 👍 </span></h2>
                     <p>Receive weekly alerts of new job offerings to work on weekends</p>
                     <form onsubmit="return false">
                         <div class="w-80 row g-0 justify-content-evenly flex-nowrap">
