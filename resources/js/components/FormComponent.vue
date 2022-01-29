@@ -2,156 +2,192 @@
   <div class="container">
     <form @submit.prevent="checkForm()" action="" class="my-2">
       <!-- @csrf -->
-      <div class="form-group">
-        <label for="" class="my-3">Job Title<span style="color:rgb(6, 209, 13); font-size:1.5rem; font-weight:bold ">∗</span></label>
-        <input
-          type="text"
-          class="form-control"
-          id=""
-          placeholder="Ex. Full Stack Developer"
-          v-model="job.title"
-        />
-        <div id="invalidJobTitle" class="invalid-feedback">
-          Please provide a Job Title
-        </div>
-      </div>
 
-      <div class="row">
-        <div class="form-group my-3 col-6">
-          <label for="" class="my-3">Category<span style="color:rgb(6, 209, 13); font-size:1.5rem; font-weight:bold ">∗</span></label>
-          <select class="form-select" id="" v-model="job.category" >
-            <option>Full Stack Developent</option>
-            <option>Backend Development</option>
-            <option>Frontend Development</option>
-            <option>Customer Support</option>
-            <option>Marketing</option>
-            <option>Sales</option>
-            <option>Design</option>
-            <option>Other Remote</option>
-          </select>
-          <div id="invalidJobCategory" class="invalid-feedback">
-            Please select a category
+      <div class="m-3 p-3 border rounded-3 shadow-sm">
+        <h2>Job Info</h2>
+
+        <!-- first row -->
+        <div class="row">
+          <!-- Title -->
+          <div class="col-md-8 p-3">
+            <h5 class="mt-4">Title <span class="">💼</span></h5>
+            <input
+              type="text"
+              class="form-control"
+              id=""
+              placeholder="Ex. Full Stack Developer"
+              v-model="job.title"
+            />
+            <div id="invalidJobTitle" class="invalid-feedback">
+              Please provide a Job Title
+            </div>
+          </div>
+
+          <!-- Category -->
+          <div class="col-md-4 p-3">
+            <h5 class="mt-4">Category <span class="">📇</span></h5>
+            <select class="form-select" id="" v-model="job.category">
+              <option>Full Stack Developent</option>
+              <option>Backend Development</option>
+              <option>Frontend Development</option>
+              <option>Customer Support</option>
+              <option>Marketing</option>
+              <option>Sales</option>
+              <option>Design</option>
+              <option>Other Remote</option>
+            </select>
+            <div id="invalidJobCategory" class="invalid-feedback">
+              Please select a category
+            </div>
           </div>
         </div>
-        
-      </div>
 
-      <div class="row">
-        <div class="form-group my-3 col-3">
-          <label for="" class="my-3">Working from<span style="color:rgb(6, 209, 13); font-size:1.5rem; font-weight:bold ">∗</span></label>
-          <select class="form-select" id="" v-model="job.region" >
-            <option v-for="region in regions">{{ region }}</option>
-          </select>
-          <div id="invalidJobRegion" class="invalid-feedback">Please select a region</div>
-        </div>
-        
+        <!-- second row -->
+        <div class="row">
+          <!-- Remote? -->
+          <div class="col-md-4 px-3">
+            <h5 class="mt-4">Is this Job Remote?<span>📡</span></h5>
+            <select class="form-select" id="" v-model="job.isremote">
+              <option v-for="remote in isremote" :key="remote">
+                {{ remote }}
+              </option>
+            </select>
+            <div id="invalidJobRemote" class="invalid-feedback">
+              Please select if your job offer is remote or not
+            </div>
+          </div>
 
-        <div class="form-group my-3 col-5">
-          <label for="" class="my-3">Timezone<span style="color:rgb(6, 209, 13); font-size:1.5rem; font-weight:bold ">∗</span></label>
-          <select class="form-select" id="" v-model="job.timezone" >
-            <option v-for="timezone in timezones">{{ timezone }}</option>
-          </select>
-          <div id="invalidJobTimezone" class="invalid-feedback">Please select a timezone</div>
-        </div>
-      </div>
-      
+          <!-- Type -->
+          <div class="col-md-4 px-3">
+            <h5 class="mt-4">Type <span>🧪</span></h5>
+            <select class="form-select" id="" v-model="job.type">
+              <option v-for="type in types" :key="type">{{ type }}</option>
+            </select>
+            <div id="invalidJobType" class="invalid-feedback">
+              Please select the type of job you offer
+            </div>
+          </div>
 
-      <div class="form-group mt-3">
-        <label for="">Job Description<span style="color:rgb(6, 209, 13); font-size:1.5rem; font-weight:bold ">∗</span></label>
-        <textarea
-          class="form-control my-3"
-          id=""
-          rows="10"
-          v-model="job.description"
-          
-        ></textarea>
-        <div id="invalidJobDescription" class="invalid-feedback">
-          Please enter a job description
-        </div>
-      </div>
-      
-
-      <div class="form-group mt-3">
-        <label for="" class="my-3">How to Apply Link<span style="color:rgb(6, 209, 13); font-size:1.5rem; font-weight:bold ">∗</span></label>
-        <input
-          type="text"
-          class="form-control"
-          id=""
-          placeholder=""
-          v-model="job.url"
-          
-        />
-        <div id="" class="form-text">Link to the application page or email</div>
-        <div id="invalidJobUrl" class="invalid-feedback">Please share the job offer website</div>
-      </div>
-
-      <div class="form-group mt-5">
-        <label for="" class="my-3">Company Name<span style="color:rgb(6, 209, 13); font-size:1.5rem; font-weight:bold ">∗</span></label>
-        <input
-          type="text"
-          class="form-control"
-          id=""
-          placeholder=""
-          v-model="company.name"
-          
-        />
-        <div id="invalidCompanyName" class="invalid-feedback">Please share your company name</div>
-      </div>
-
-      <div class="row">
-        <div class="form-group my-3 col-6">
-          <label for="" class="my-3">Website<span style="color:rgb(6, 209, 13); font-size:1.5rem; font-weight:bold ">∗</span></label>
-          <input
-            type="text"
-            class="form-control"
-            id=""
-            placeholder=""
-            v-model="company.website"
-            
-          />
-          <div id="invalidCompanyWebsite" class="invalid-feedback">Please share your company website</div>
+          <!-- Days -->
+          <div class="col-md-4 px-3">
+            <h5 class="mt-4">Days per Week?<span>📅</span></h5>
+            <select class="form-select" id="" v-model="job.days">
+              <option v-for="day in days" :key="day">{{ day }}</option>
+            </select>
+            <div id="invalidJobDays" class="invalid-feedback">
+              Please select how many days per week you require
+            </div>
+          </div>
         </div>
 
-        <div class="form-group my-3 col-6">
-          <label for="" class="my-3">Contact Email</label>
-          <input
-            type="text"
-            class="form-control"
-            id=""
-            placeholder=""
-            v-model="company.email"
-          />
+        <!-- Description -->
+        <div class="row mt-5">
+          <div class="form-group col p-3">
+            <h5>Job Description <span>⌨</span></h5>
+            <textarea
+              class="form-control my-3"
+              id=""
+              rows="10"
+              v-model="job.description"
+            ></textarea>
+            <div id="invalidJobDescription" class="invalid-feedback">
+              Please enter a job description
+            </div>
+          </div>
+        </div>
+
+        <!-- Apply Link -->
+        <div class="row mt-1">
+          <div class="col px-3">
+            <h5>How to apply link <span>🚀</span></h5>
+            <input
+              type="text"
+              class="form-control"
+              id=""
+              placeholder=""
+              v-model="job.url"
+            />
+            <div id="" class="form-text">
+              Link to the application page or email
+            </div>
+            <div id="invalidJobUrl" class="invalid-feedback">
+              Please share the job offer website
+            </div>
+          </div>
         </div>
       </div>
 
-      <div class="form-group mt-3">
-        <label for="">Company Description</label>
-        <textarea
-          class="form-control my-3"
-          id=""
-          rows="4"
-          v-model="company.description"
-        ></textarea>
-        <div id="" class="form-text">
-          Tell us a little bit about what your company does
+      <div class="mt-5 mx-3 p-3 border rounded-3 shadow-sm">
+        <h2>Company Info</h2>
+
+        <div class="row">
+          <!-- Name -->
+          <div class="col-md-8 p-3">
+            <h5>Company Name <span>🗿</span></h5>
+            <input
+              type="text"
+              class="form-control"
+              id=""
+              placeholder=""
+              v-model="company.name"
+            />
+            <div id="invalidCompanyName" class="invalid-feedback">
+              Please share your company name
+            </div>
+          </div>
         </div>
-      </div>
 
-      <div class="form-group my-3 col-6">
-        <label for="" class="my-3">Headquarters</label>
-        <input
-          type="text"
-          class="form-control"
-          id=""
-          placeholder=""
-          v-model="company.headquarters"
-        />
-      </div>
+        <div class="row">
+          <!-- Website -->
+          <div class="col-md-6 p-3">
+            <h5>Website <span>🌐</span></h5>
+            <input
+              type="text"
+              class="form-control"
+              id=""
+              placeholder=""
+              v-model="company.website"
+            />
+            <div id="invalidCompanyWebsite" class="invalid-feedback">
+              Please share your company website
+            </div>
+          </div>
+          <!-- Contact Email -->
+          <div class="col-md-6 p-3">
+            <h5>Contact email <span>📧</span></h5>
+            <input
+              type="text"
+              class="form-control"
+              id=""
+              placeholder=""
+              v-model="company.email"
+            />
+          </div>
+        </div>
 
-      <div class="form-group my-3">
-        <label for="" class="my-3">Company Logo</label>
-        <br />
-        <input type="file" class="form-control-file" id="" lang="en" />
+        <div class="row">
+          <!-- company description -->
+          <div class="form-group col p-3">
+            <h5>Company Description <span>⌨</span></h5>
+            <textarea
+              class="form-control my-3"
+              id=""
+              rows="4"
+              v-model="company.description"
+            ></textarea>
+            <div id="" class="form-text">
+              Tell us a little bit about what your company does
+            </div>
+          </div>
+        </div>
+
+        <div class="row">
+
+        </div>
+        <div class="form-group col p-2">
+          <h5>Company Logo <span>🚩</span></h5>
+          <input type="file" class="form-control-file" id="" lang="en" />
+        </div>
       </div>
 
       <div class="my-5 text-center">
@@ -162,13 +198,14 @@
 </template>
 
 <script>
-
 let defaultJob = {
   id: null,
   title: "",
+  type: "",
+  days: "",
+  isremote: "",
   description: "",
   url: "",
-  hours: "",
   timezone: "",
   region: "",
   category: "",
@@ -305,6 +342,12 @@ export default {
         "(GMT+13:00) Phoenix Islands, Tokelau, Tonga",
         "(GMT+14:00) Line Islands",
       ],
+
+      types: ["contract", "permanent", "temporary"],
+
+      isremote: ["yes", "no", "partial"],
+
+      days: [1, 2, 3, 4],
     };
   },
 
@@ -312,40 +355,63 @@ export default {
     // newJob() {},
 
     checkForm(e) {
-
       if (!this.job.title) {
-        document.getElementById('invalidJobTitle').style.display = 'block';
+        document.getElementById("invalidJobTitle").style.display = "block";
       }
 
       if (!this.job.description) {
-        document.getElementById('invalidJobDescription').style.display = 'block';
-      } 
+        document.getElementById("invalidJobDescription").style.display =
+          "block";
+      }
 
       if (!this.job.category) {
-        document.getElementById('invalidJobCategory').style.display = 'block';
-      } 
+        document.getElementById("invalidJobCategory").style.display = "block";
+      }
+
+      if (!this.job.type) {
+        document.getElementById("invalidJobType").style.display = "block";
+      }
+
+      if (!this.job.days) {
+        document.getElementById("invalidJobDays").style.display = "block";
+      }
+
+      if (!this.job.isremote) {
+        document.getElementById("invalidJobRemote").style.display = "block";
+      }
 
       if (!this.job.url) {
-        document.getElementById('invalidJobUrl').style.display = 'block';
+        document.getElementById("invalidJobUrl").style.display = "block";
       }
 
-      if (!this.job.timezone) {
-        document.getElementById('invalidJobTimezone').style.display = 'block';
-      }
-      
-      if (!this.job.region) {
-        document.getElementById('invalidJobRegion').style.display = 'block'
-      }
+      // if (!this.job.timezone) {
+      //   document.getElementById("invalidJobTimezone").style.display = "block";
+      // }
+
+      // if (!this.job.region) {
+      //   document.getElementById("invalidJobRegion").style.display = "block";
+      // }
 
       if (!this.company.name) {
-        document.getElementById('invalidCompanyName').style.display = 'block';
+        document.getElementById("invalidCompanyName").style.display = "block";
       }
 
       if (!this.company.website) {
-        document.getElementById('invalidCompanyWebsite').style.display = 'block';
+        document.getElementById("invalidCompanyWebsite").style.display =
+          "block";
       }
 
-      if (this.job.title && this.job.description && this.job.region && this.job.timezone && this.job.url && this.job.category && this.company.name && this.company.website) {
+      if (
+        this.job.title &&
+        this.job.description &&
+        this.job.type &&
+        this.job.days &&
+        this.job.isremote &&
+        this.job.url &&
+        this.job.category &&
+        this.company.name &&
+        this.company.website
+      ) {
         this.axios
           .post("/api/jobs", { job: this.job, company: this.company })
           .then((response) => {

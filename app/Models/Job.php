@@ -14,6 +14,8 @@ class Job extends Model
 
     protected $fillable = [
         'title',
+        'days',
+        'isremote',
         'description',
         'url',
         'hours',

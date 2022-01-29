@@ -29350,9 +29350,11 @@ __webpack_require__.r(__webpack_exports__);
 var defaultJob = {
   id: null,
   title: "",
+  type: "",
+  days: "",
+  isremote: "",
   description: "",
   url: "",
-  hours: "",
   timezone: "",
   region: "",
   category: ""
@@ -29373,45 +29375,58 @@ var defaultCompany = {
       job: Object.assign({}, defaultJob),
       company: Object.assign({}, defaultCompany),
       regions: ["Anywhere", "Asia", "Africa", "North America", "South America", "Europe", "Australia/New Zealand"],
-      timezones: ["(GMT-12:00) International Date Line West", "(GMT-11:00) Coordinated Universal Time-11", "(GMT-11:00) Samoa", "(GMT-10:00) Hawaii", "(GMT-09:30) Marquesas Islands", "(GMT-09:00) Alaska", "(GMT-08:00) Baja California", "(GMT-08:00) Pacific Time (US & Canada)", "(GMT-07:00) Chihuahua,Mazatlan", "(GMT-07:00) Arizona", "(GMT-07:00) Mountain Time (US & Canada)", "(GMT-06:00) Central Time (US & Canada)", "(GMT-06:00) Central America", "(GMT-06:00) Guadalajara, Mexico City, Monterrey", "(GMT-06:00) Saskatchewan", "(GMT-05:00) Bogota, Lima, Quito", "(GMT-05:00) Eastern Time (US & Canada)", "(GMT-05:00) Indiana (East)", "(GMT-04:30) Caracas", "(GMT-04:00) Atlantic Time (Canada)", "(GMT-04:00) Asuncion", "(GMT-04:00) Cuiaba", "(GMT-04:00) Santiago", "(GMT-04:00) Georgetown, La Paz, Manaus, San Juan", "(GMT-03:30) Newfoundland", "(GMT-03:00) Buenos Aires", "(GMT-03:00) Brasilia", "(GMT-03:00) Cayenne, Fortaleza", "(GMT-03:00) Montevideo", "(GMT-03:00) Greenland", "(GMT-02:00) Coordinated Universal Time-02", "(GMT-02:00) Mid-Atlantic", "(GMT-01:00) Azores", "(GMT-01:00) Cape Verde Is.", "(GMT+00:00) Casablanca", "(GMT+00:00) Monrovia,Reykjavik", "(GMT+00:00) Greenwich Mean Time : Dublin,Edinburgh,Lisbon, London", "(GMT+01:00) Sarajevo,Skopje, Warsaw, Zagreb", "(GMT+01:00) West Central Africa", "(GMT+01:00) Belgrade,Bratislava, Budapest, Ljubljana, Prague", "(GMT+01:00) Brussels, Copenhagen,Madrid, Paris", "(GMT+01:00) Amsterdam,Berlin, Bern, Rome,Stockholm, Vienna", "(GMT+02:00) Harare, Pretoria", "(GMT+02:00) Damascus", "(GMT+02:00) Helsinki, Kyiv, Riga, Sofia, Tallinn, Vilnius", "(GMT+02:00) Windhoek", "(GMT+02:00) Minsk", "(GMT+02:00) Athens,Bucharest, Istanbul", "(GMT+02:00) Amman", "(GMT+02:00) Beirut", "(GMT+02:00) Jerusalem", "(GMT+02:00) Cairo", "(GMT+03:00) Kuwait, Riyadh", "(GMT+03:00) Moscow, St. Petersburg, Volgograd", "(GMT+03:00) Baghdad", "(GMT+03:00) Nairobi", "(GMT+03:30) Tehran", "(GMT+04:00) Port Louis", "(GMT+04:00) Tbilisi", "(GMT+04:00) Baku", "(GMT+04:00) Yerevan", "(GMT+04:00) Abu Dhabi, Muscat", "(GMT+04:30) Kabul", "(GMT+05:00) Yekaterinburg", "(GMT+05:00) Islamabad,Karachi", "(GMT+05:00) Tashkent", "(GMT+05:30) Chennai, Kolkata, Mumbai,New Delhi", "(GMT+05:30) Sri Jayawardenepura", "(GMT+05:45) Kathmandu", "(GMT+06:00) Dhaka", "(GMT+06:00) Novosibirsk", "(GMT+06:00) Astana", "(GMT+06:30) Yangon (Rangoon)", "(GMT+07:00) Krasnoyarsk", "(GMT+07:00) Bangkok, Hanoi,Jakarta", "(GMT+08:00) Ulaanbaatar", "(GMT+08:00) Perth", "(GMT+08:00) Taipei", "(GMT+08:00) Kuala Lumpur,Singapore", "(GMT+08:00) Beijing,Chongqing,Hong Kong, Urumqi", "(GMT+08:00) Irkutsk", "(GMT+08:30) Pyongyang", "(GMT+08:30) Eucla", "(GMT+09:00) Seoul", "(GMT+09:00) Osaka,Sapporo, Tokyo", "(GMT+09:00) Yakutsk", "(GMT+09:30) Darwin", "(GMT+09:30) Adelaide", "(GMT+10:00) Hobart", "(GMT+10:00) Vladivostok", "(GMT+10:00) Guam, Port Moresby", "(GMT+10:00) Brisbane", "(GMT+10:00) Canberra,Melbourne, Sydney", "(GMT+10:30) Lord Howe Island", "(GMT+11:00) Magadan, Solomon Is.,New Caledonia", "(GMT+12:00) Fiji", "(GMT+12:00) Petropavlovsk-Kamchatsky", "(GMT+12:00) Auckland, Wellington", "(GMT+12:00) Coordinated Universal Time+12", "(GMT+12:45) Chatham Islands", "(GMT+13:00) Phoenix Islands, Tokelau, Tonga", "(GMT+14:00) Line Islands"]
+      timezones: ["(GMT-12:00) International Date Line West", "(GMT-11:00) Coordinated Universal Time-11", "(GMT-11:00) Samoa", "(GMT-10:00) Hawaii", "(GMT-09:30) Marquesas Islands", "(GMT-09:00) Alaska", "(GMT-08:00) Baja California", "(GMT-08:00) Pacific Time (US & Canada)", "(GMT-07:00) Chihuahua,Mazatlan", "(GMT-07:00) Arizona", "(GMT-07:00) Mountain Time (US & Canada)", "(GMT-06:00) Central Time (US & Canada)", "(GMT-06:00) Central America", "(GMT-06:00) Guadalajara, Mexico City, Monterrey", "(GMT-06:00) Saskatchewan", "(GMT-05:00) Bogota, Lima, Quito", "(GMT-05:00) Eastern Time (US & Canada)", "(GMT-05:00) Indiana (East)", "(GMT-04:30) Caracas", "(GMT-04:00) Atlantic Time (Canada)", "(GMT-04:00) Asuncion", "(GMT-04:00) Cuiaba", "(GMT-04:00) Santiago", "(GMT-04:00) Georgetown, La Paz, Manaus, San Juan", "(GMT-03:30) Newfoundland", "(GMT-03:00) Buenos Aires", "(GMT-03:00) Brasilia", "(GMT-03:00) Cayenne, Fortaleza", "(GMT-03:00) Montevideo", "(GMT-03:00) Greenland", "(GMT-02:00) Coordinated Universal Time-02", "(GMT-02:00) Mid-Atlantic", "(GMT-01:00) Azores", "(GMT-01:00) Cape Verde Is.", "(GMT+00:00) Casablanca", "(GMT+00:00) Monrovia,Reykjavik", "(GMT+00:00) Greenwich Mean Time : Dublin,Edinburgh,Lisbon, London", "(GMT+01:00) Sarajevo,Skopje, Warsaw, Zagreb", "(GMT+01:00) West Central Africa", "(GMT+01:00) Belgrade,Bratislava, Budapest, Ljubljana, Prague", "(GMT+01:00) Brussels, Copenhagen,Madrid, Paris", "(GMT+01:00) Amsterdam,Berlin, Bern, Rome,Stockholm, Vienna", "(GMT+02:00) Harare, Pretoria", "(GMT+02:00) Damascus", "(GMT+02:00) Helsinki, Kyiv, Riga, Sofia, Tallinn, Vilnius", "(GMT+02:00) Windhoek", "(GMT+02:00) Minsk", "(GMT+02:00) Athens,Bucharest, Istanbul", "(GMT+02:00) Amman", "(GMT+02:00) Beirut", "(GMT+02:00) Jerusalem", "(GMT+02:00) Cairo", "(GMT+03:00) Kuwait, Riyadh", "(GMT+03:00) Moscow, St. Petersburg, Volgograd", "(GMT+03:00) Baghdad", "(GMT+03:00) Nairobi", "(GMT+03:30) Tehran", "(GMT+04:00) Port Louis", "(GMT+04:00) Tbilisi", "(GMT+04:00) Baku", "(GMT+04:00) Yerevan", "(GMT+04:00) Abu Dhabi, Muscat", "(GMT+04:30) Kabul", "(GMT+05:00) Yekaterinburg", "(GMT+05:00) Islamabad,Karachi", "(GMT+05:00) Tashkent", "(GMT+05:30) Chennai, Kolkata, Mumbai,New Delhi", "(GMT+05:30) Sri Jayawardenepura", "(GMT+05:45) Kathmandu", "(GMT+06:00) Dhaka", "(GMT+06:00) Novosibirsk", "(GMT+06:00) Astana", "(GMT+06:30) Yangon (Rangoon)", "(GMT+07:00) Krasnoyarsk", "(GMT+07:00) Bangkok, Hanoi,Jakarta", "(GMT+08:00) Ulaanbaatar", "(GMT+08:00) Perth", "(GMT+08:00) Taipei", "(GMT+08:00) Kuala Lumpur,Singapore", "(GMT+08:00) Beijing,Chongqing,Hong Kong, Urumqi", "(GMT+08:00) Irkutsk", "(GMT+08:30) Pyongyang", "(GMT+08:30) Eucla", "(GMT+09:00) Seoul", "(GMT+09:00) Osaka,Sapporo, Tokyo", "(GMT+09:00) Yakutsk", "(GMT+09:30) Darwin", "(GMT+09:30) Adelaide", "(GMT+10:00) Hobart", "(GMT+10:00) Vladivostok", "(GMT+10:00) Guam, Port Moresby", "(GMT+10:00) Brisbane", "(GMT+10:00) Canberra,Melbourne, Sydney", "(GMT+10:30) Lord Howe Island", "(GMT+11:00) Magadan, Solomon Is.,New Caledonia", "(GMT+12:00) Fiji", "(GMT+12:00) Petropavlovsk-Kamchatsky", "(GMT+12:00) Auckland, Wellington", "(GMT+12:00) Coordinated Universal Time+12", "(GMT+12:45) Chatham Islands", "(GMT+13:00) Phoenix Islands, Tokelau, Tonga", "(GMT+14:00) Line Islands"],
+      types: ["contract", "permanent", "temporary"],
+      isremote: ["yes", "no", "partial"],
+      days: [1, 2, 3, 4]
     };
   },
   methods: {
     // newJob() {},
     checkForm: function checkForm(e) {
       if (!this.job.title) {
-        document.getElementById('invalidJobTitle').style.display = 'block';
+        document.getElementById("invalidJobTitle").style.display = "block";
       }
 
       if (!this.job.description) {
-        document.getElementById('invalidJobDescription').style.display = 'block';
+        document.getElementById("invalidJobDescription").style.display = "block";
       }
 
       if (!this.job.category) {
-        document.getElementById('invalidJobCategory').style.display = 'block';
+        document.getElementById("invalidJobCategory").style.display = "block";
+      }
+
+      if (!this.job.type) {
+        document.getElementById("invalidJobType").style.display = "block";
+      }
+
+      if (!this.job.days) {
+        document.getElementById("invalidJobDays").style.display = "block";
+      }
+
+      if (!this.job.isremote) {
+        document.getElementById("invalidJobRemote").style.display = "block";
       }
 
       if (!this.job.url) {
-        document.getElementById('invalidJobUrl').style.display = 'block';
-      }
+        document.getElementById("invalidJobUrl").style.display = "block";
+      } // if (!this.job.timezone) {
+      //   document.getElementById("invalidJobTimezone").style.display = "block";
+      // }
+      // if (!this.job.region) {
+      //   document.getElementById("invalidJobRegion").style.display = "block";
+      // }
 
-      if (!this.job.timezone) {
-        document.getElementById('invalidJobTimezone').style.display = 'block';
-      }
-
-      if (!this.job.region) {
-        document.getElementById('invalidJobRegion').style.display = 'block';
-      }
 
       if (!this.company.name) {
-        document.getElementById('invalidCompanyName').style.display = 'block';
+        document.getElementById("invalidCompanyName").style.display = "block";
       }
 
       if (!this.company.website) {
-        document.getElementById('invalidCompanyWebsite').style.display = 'block';
+        document.getElementById("invalidCompanyWebsite").style.display = "block";
       }
 
-      if (this.job.title && this.job.description && this.job.region && this.job.timezone && this.job.url && this.job.category && this.company.name && this.company.website) {
+      if (this.job.title && this.job.description && this.job.type && this.job.days && this.job.isremote && this.job.url && this.job.category && this.company.name && this.company.website) {
         this.axios.post("/api/jobs", {
           job: this.job,
           company: this.company
@@ -29695,286 +29710,280 @@ var _hoisted_1 = {
   "class": "container"
 };
 var _hoisted_2 = {
-  "class": "form-group"
+  "class": "m-3 p-3 border rounded-3 shadow-sm"
 };
 
-var _hoisted_3 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("label", {
-  "for": "",
-  "class": "my-3"
-}, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)("Job Title"), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("span", {
-  style: {
-    "color": "rgb(6, 209, 13)",
-    "font-size": "1.5rem",
-    "font-weight": "bold"
-  }
-}, "∗")], -1
+var _hoisted_3 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("h2", null, "Job Info", -1
 /* HOISTED */
 );
 
-var _hoisted_4 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
+var _hoisted_4 = {
+  "class": "row"
+};
+var _hoisted_5 = {
+  "class": "col-md-8 p-3"
+};
+
+var _hoisted_6 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("h5", {
+  "class": "mt-4"
+}, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)("Title "), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("span", {
+  "class": ""
+}, "💼")], -1
+/* HOISTED */
+);
+
+var _hoisted_7 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
   id: "invalidJobTitle",
   "class": "invalid-feedback"
 }, " Please provide a Job Title ", -1
 /* HOISTED */
 );
 
-var _hoisted_5 = {
-  "class": "row"
-};
-var _hoisted_6 = {
-  "class": "form-group my-3 col-6"
+var _hoisted_8 = {
+  "class": "col-md-4 p-3"
 };
 
-var _hoisted_7 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("label", {
-  "for": "",
-  "class": "my-3"
-}, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)("Category"), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("span", {
-  style: {
-    "color": "rgb(6, 209, 13)",
-    "font-size": "1.5rem",
-    "font-weight": "bold"
-  }
-}, "∗")], -1
+var _hoisted_9 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("h5", {
+  "class": "mt-4"
+}, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)("Category "), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("span", {
+  "class": ""
+}, "📇")], -1
 /* HOISTED */
 );
 
-var _hoisted_8 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("option", null, "Full Stack Developent", -1
+var _hoisted_10 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("option", null, "Full Stack Developent", -1
 /* HOISTED */
 );
 
-var _hoisted_9 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("option", null, "Backend Development", -1
+var _hoisted_11 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("option", null, "Backend Development", -1
 /* HOISTED */
 );
 
-var _hoisted_10 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("option", null, "Frontend Development", -1
+var _hoisted_12 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("option", null, "Frontend Development", -1
 /* HOISTED */
 );
 
-var _hoisted_11 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("option", null, "Customer Support", -1
+var _hoisted_13 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("option", null, "Customer Support", -1
 /* HOISTED */
 );
 
-var _hoisted_12 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("option", null, "Marketing", -1
+var _hoisted_14 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("option", null, "Marketing", -1
 /* HOISTED */
 );
 
-var _hoisted_13 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("option", null, "Sales", -1
+var _hoisted_15 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("option", null, "Sales", -1
 /* HOISTED */
 );
 
-var _hoisted_14 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("option", null, "Design", -1
+var _hoisted_16 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("option", null, "Design", -1
 /* HOISTED */
 );
 
-var _hoisted_15 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("option", null, "Other Remote", -1
+var _hoisted_17 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("option", null, "Other Remote", -1
 /* HOISTED */
 );
 
-var _hoisted_16 = [_hoisted_8, _hoisted_9, _hoisted_10, _hoisted_11, _hoisted_12, _hoisted_13, _hoisted_14, _hoisted_15];
+var _hoisted_18 = [_hoisted_10, _hoisted_11, _hoisted_12, _hoisted_13, _hoisted_14, _hoisted_15, _hoisted_16, _hoisted_17];
 
-var _hoisted_17 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
+var _hoisted_19 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
   id: "invalidJobCategory",
   "class": "invalid-feedback"
 }, " Please select a category ", -1
 /* HOISTED */
 );
 
-var _hoisted_18 = {
+var _hoisted_20 = {
   "class": "row"
 };
-var _hoisted_19 = {
-  "class": "form-group my-3 col-3"
+var _hoisted_21 = {
+  "class": "col-md-4 px-3"
 };
 
-var _hoisted_20 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("label", {
-  "for": "",
-  "class": "my-3"
-}, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)("Working from"), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("span", {
-  style: {
-    "color": "rgb(6, 209, 13)",
-    "font-size": "1.5rem",
-    "font-weight": "bold"
-  }
-}, "∗")], -1
+var _hoisted_22 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("h5", {
+  "class": "mt-4"
+}, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)("Is this Job Remote?"), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("span", null, "📡")], -1
 /* HOISTED */
 );
 
-var _hoisted_21 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
-  id: "invalidJobRegion",
+var _hoisted_23 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
+  id: "invalidJobRemote",
   "class": "invalid-feedback"
-}, "Please select a region", -1
+}, " Please select if your job offer is remote or not ", -1
 /* HOISTED */
 );
 
-var _hoisted_22 = {
-  "class": "form-group my-3 col-5"
+var _hoisted_24 = {
+  "class": "col-md-4 px-3"
 };
 
-var _hoisted_23 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("label", {
-  "for": "",
-  "class": "my-3"
-}, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)("Timezone"), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("span", {
-  style: {
-    "color": "rgb(6, 209, 13)",
-    "font-size": "1.5rem",
-    "font-weight": "bold"
-  }
-}, "∗")], -1
+var _hoisted_25 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("h5", {
+  "class": "mt-4"
+}, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)("Type "), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("span", null, "🧪")], -1
 /* HOISTED */
 );
 
-var _hoisted_24 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
-  id: "invalidJobTimezone",
+var _hoisted_26 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
+  id: "invalidJobType",
   "class": "invalid-feedback"
-}, "Please select a timezone", -1
+}, " Please select the type of job you offer ", -1
 /* HOISTED */
 );
 
-var _hoisted_25 = {
-  "class": "form-group mt-3"
+var _hoisted_27 = {
+  "class": "col-md-4 px-3"
 };
 
-var _hoisted_26 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("label", {
-  "for": ""
-}, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)("Job Description"), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("span", {
-  style: {
-    "color": "rgb(6, 209, 13)",
-    "font-size": "1.5rem",
-    "font-weight": "bold"
-  }
-}, "∗")], -1
+var _hoisted_28 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("h5", {
+  "class": "mt-4"
+}, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)("Days per Week?"), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("span", null, "📅")], -1
 /* HOISTED */
 );
 
-var _hoisted_27 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
+var _hoisted_29 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
+  id: "invalidJobDays",
+  "class": "invalid-feedback"
+}, " Please select how many days per week you require ", -1
+/* HOISTED */
+);
+
+var _hoisted_30 = {
+  "class": "row mt-5"
+};
+var _hoisted_31 = {
+  "class": "form-group col p-3"
+};
+
+var _hoisted_32 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("h5", null, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)("Job Description "), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("span", null, "⌨")], -1
+/* HOISTED */
+);
+
+var _hoisted_33 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
   id: "invalidJobDescription",
   "class": "invalid-feedback"
 }, " Please enter a job description ", -1
 /* HOISTED */
 );
 
-var _hoisted_28 = {
-  "class": "form-group mt-3"
+var _hoisted_34 = {
+  "class": "row mt-1"
+};
+var _hoisted_35 = {
+  "class": "col px-3"
 };
 
-var _hoisted_29 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("label", {
-  "for": "",
-  "class": "my-3"
-}, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)("How to Apply Link"), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("span", {
-  style: {
-    "color": "rgb(6, 209, 13)",
-    "font-size": "1.5rem",
-    "font-weight": "bold"
-  }
-}, "∗")], -1
+var _hoisted_36 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("h5", null, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)("How to apply link "), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("span", null, "🚀")], -1
 /* HOISTED */
 );
 
-var _hoisted_30 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
+var _hoisted_37 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
   id: "",
   "class": "form-text"
-}, "Link to the application page or email", -1
-/* HOISTED */
-);
-
-var _hoisted_31 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
-  id: "invalidJobUrl",
-  "class": "invalid-feedback"
-}, "Please share the job offer website", -1
-/* HOISTED */
-);
-
-var _hoisted_32 = {
-  "class": "form-group mt-5"
-};
-
-var _hoisted_33 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("label", {
-  "for": "",
-  "class": "my-3"
-}, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)("Company Name"), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("span", {
-  style: {
-    "color": "rgb(6, 209, 13)",
-    "font-size": "1.5rem",
-    "font-weight": "bold"
-  }
-}, "∗")], -1
-/* HOISTED */
-);
-
-var _hoisted_34 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
-  id: "invalidCompanyName",
-  "class": "invalid-feedback"
-}, "Please share your company name", -1
-/* HOISTED */
-);
-
-var _hoisted_35 = {
-  "class": "row"
-};
-var _hoisted_36 = {
-  "class": "form-group my-3 col-6"
-};
-
-var _hoisted_37 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("label", {
-  "for": "",
-  "class": "my-3"
-}, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)("Website"), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("span", {
-  style: {
-    "color": "rgb(6, 209, 13)",
-    "font-size": "1.5rem",
-    "font-weight": "bold"
-  }
-}, "∗")], -1
+}, " Link to the application page or email ", -1
 /* HOISTED */
 );
 
 var _hoisted_38 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
-  id: "invalidCompanyWebsite",
+  id: "invalidJobUrl",
   "class": "invalid-feedback"
-}, "Please share your company website", -1
+}, " Please share the job offer website ", -1
 /* HOISTED */
 );
 
 var _hoisted_39 = {
-  "class": "form-group my-3 col-6"
+  "class": "mt-5 mx-3 p-3 border rounded-3 shadow-sm"
 };
 
-var _hoisted_40 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("label", {
-  "for": "",
-  "class": "my-3"
-}, "Contact Email", -1
+var _hoisted_40 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("h2", null, "Company Info", -1
 /* HOISTED */
 );
 
 var _hoisted_41 = {
-  "class": "form-group mt-3"
+  "class": "row"
+};
+var _hoisted_42 = {
+  "class": "col-md-8 p-3"
 };
 
-var _hoisted_42 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("label", {
-  "for": ""
-}, "Company Description", -1
+var _hoisted_43 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("h5", null, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)("Company Name "), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("span", null, "🗿")], -1
 /* HOISTED */
 );
 
-var _hoisted_43 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
+var _hoisted_44 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
+  id: "invalidCompanyName",
+  "class": "invalid-feedback"
+}, " Please share your company name ", -1
+/* HOISTED */
+);
+
+var _hoisted_45 = {
+  "class": "row"
+};
+var _hoisted_46 = {
+  "class": "col-md-6 p-3"
+};
+
+var _hoisted_47 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("h5", null, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)("Website "), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("span", null, "🌐")], -1
+/* HOISTED */
+);
+
+var _hoisted_48 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
+  id: "invalidCompanyWebsite",
+  "class": "invalid-feedback"
+}, " Please share your company website ", -1
+/* HOISTED */
+);
+
+var _hoisted_49 = {
+  "class": "col-md-6 p-3"
+};
+
+var _hoisted_50 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("h5", null, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)("Contact email "), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("span", null, "📧")], -1
+/* HOISTED */
+);
+
+var _hoisted_51 = {
+  "class": "row"
+};
+var _hoisted_52 = {
+  "class": "form-group col p-3"
+};
+
+var _hoisted_53 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("h5", null, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)("Company Description "), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("span", null, "⌨")], -1
+/* HOISTED */
+);
+
+var _hoisted_54 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
   id: "",
   "class": "form-text"
 }, " Tell us a little bit about what your company does ", -1
 /* HOISTED */
 );
 
-var _hoisted_44 = {
-  "class": "form-group my-3 col-6"
-};
-
-var _hoisted_45 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("label", {
-  "for": "",
-  "class": "my-3"
-}, "Headquarters", -1
+var _hoisted_55 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
+  "class": "row"
+}, null, -1
 /* HOISTED */
 );
 
-var _hoisted_46 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createStaticVNode)("<div class=\"form-group my-3\"><label for=\"\" class=\"my-3\">Company Logo</label><br><input type=\"file\" class=\"form-control-file\" id=\"\" lang=\"en\"></div><div class=\"my-5 text-center\"><button type=\"submit\" class=\"btn btn-primary btn-lg\">Post Job</button></div>", 2);
+var _hoisted_56 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
+  "class": "form-group col p-2"
+}, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("h5", null, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)("Company Logo "), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("span", null, "🚩")]), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("input", {
+  type: "file",
+  "class": "form-control-file",
+  id: "",
+  lang: "en"
+})], -1
+/* HOISTED */
+);
+
+var _hoisted_57 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
+  "class": "my-5 text-center"
+}, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("button", {
+  type: "submit",
+  "class": "btn btn-primary btn-lg"
+}, "Post Job")], -1
+/* HOISTED */
+);
 
 function render(_ctx, _cache, $props, $setup, $data, $options) {
   return (0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("div", _hoisted_1, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("form", {
@@ -29983,7 +29992,7 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
     }, ["prevent"])),
     action: "",
     "class": "my-2"
-  }, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" @csrf "), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_2, [_hoisted_3, (0,vue__WEBPACK_IMPORTED_MODULE_0__.withDirectives)((0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("input", {
+  }, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" @csrf "), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_2, [_hoisted_3, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" first row "), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_4, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" Title "), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_5, [_hoisted_6, (0,vue__WEBPACK_IMPORTED_MODULE_0__.withDirectives)((0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("input", {
     type: "text",
     "class": "form-control",
     id: "",
@@ -29993,111 +30002,121 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
     })
   }, null, 512
   /* NEED_PATCH */
-  ), [[vue__WEBPACK_IMPORTED_MODULE_0__.vModelText, $data.job.title]]), _hoisted_4]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_5, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_6, [_hoisted_7, (0,vue__WEBPACK_IMPORTED_MODULE_0__.withDirectives)((0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("select", {
+  ), [[vue__WEBPACK_IMPORTED_MODULE_0__.vModelText, $data.job.title]]), _hoisted_7]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" Category "), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_8, [_hoisted_9, (0,vue__WEBPACK_IMPORTED_MODULE_0__.withDirectives)((0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("select", {
     "class": "form-select",
     id: "",
     "onUpdate:modelValue": _cache[1] || (_cache[1] = function ($event) {
       return $data.job.category = $event;
     })
-  }, _hoisted_16, 512
+  }, _hoisted_18, 512
   /* NEED_PATCH */
-  ), [[vue__WEBPACK_IMPORTED_MODULE_0__.vModelSelect, $data.job.category]]), _hoisted_17])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_18, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_19, [_hoisted_20, (0,vue__WEBPACK_IMPORTED_MODULE_0__.withDirectives)((0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("select", {
+  ), [[vue__WEBPACK_IMPORTED_MODULE_0__.vModelSelect, $data.job.category]]), _hoisted_19])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" second row "), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_20, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" Remote? "), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_21, [_hoisted_22, (0,vue__WEBPACK_IMPORTED_MODULE_0__.withDirectives)((0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("select", {
     "class": "form-select",
     id: "",
     "onUpdate:modelValue": _cache[2] || (_cache[2] = function ($event) {
-      return $data.job.region = $event;
+      return $data.job.isremote = $event;
     })
-  }, [((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(true), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)(vue__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,vue__WEBPACK_IMPORTED_MODULE_0__.renderList)($data.regions, function (region) {
-    return (0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("option", null, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)(region), 1
+  }, [((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(true), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)(vue__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,vue__WEBPACK_IMPORTED_MODULE_0__.renderList)($data.isremote, function (remote) {
+    return (0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("option", {
+      key: remote
+    }, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)(remote), 1
     /* TEXT */
     );
-  }), 256
-  /* UNKEYED_FRAGMENT */
+  }), 128
+  /* KEYED_FRAGMENT */
   ))], 512
   /* NEED_PATCH */
-  ), [[vue__WEBPACK_IMPORTED_MODULE_0__.vModelSelect, $data.job.region]]), _hoisted_21]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_22, [_hoisted_23, (0,vue__WEBPACK_IMPORTED_MODULE_0__.withDirectives)((0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("select", {
+  ), [[vue__WEBPACK_IMPORTED_MODULE_0__.vModelSelect, $data.job.isremote]]), _hoisted_23]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" Type "), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_24, [_hoisted_25, (0,vue__WEBPACK_IMPORTED_MODULE_0__.withDirectives)((0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("select", {
     "class": "form-select",
     id: "",
     "onUpdate:modelValue": _cache[3] || (_cache[3] = function ($event) {
-      return $data.job.timezone = $event;
+      return $data.job.type = $event;
     })
-  }, [((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(true), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)(vue__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,vue__WEBPACK_IMPORTED_MODULE_0__.renderList)($data.timezones, function (timezone) {
-    return (0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("option", null, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)(timezone), 1
+  }, [((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(true), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)(vue__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,vue__WEBPACK_IMPORTED_MODULE_0__.renderList)($data.types, function (type) {
+    return (0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("option", {
+      key: type
+    }, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)(type), 1
     /* TEXT */
     );
-  }), 256
-  /* UNKEYED_FRAGMENT */
+  }), 128
+  /* KEYED_FRAGMENT */
   ))], 512
   /* NEED_PATCH */
-  ), [[vue__WEBPACK_IMPORTED_MODULE_0__.vModelSelect, $data.job.timezone]]), _hoisted_24])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_25, [_hoisted_26, (0,vue__WEBPACK_IMPORTED_MODULE_0__.withDirectives)((0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("textarea", {
+  ), [[vue__WEBPACK_IMPORTED_MODULE_0__.vModelSelect, $data.job.type]]), _hoisted_26]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" Days "), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_27, [_hoisted_28, (0,vue__WEBPACK_IMPORTED_MODULE_0__.withDirectives)((0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("select", {
+    "class": "form-select",
+    id: "",
+    "onUpdate:modelValue": _cache[4] || (_cache[4] = function ($event) {
+      return $data.job.days = $event;
+    })
+  }, [((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(true), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)(vue__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,vue__WEBPACK_IMPORTED_MODULE_0__.renderList)($data.days, function (day) {
+    return (0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("option", {
+      key: day
+    }, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)(day), 1
+    /* TEXT */
+    );
+  }), 128
+  /* KEYED_FRAGMENT */
+  ))], 512
+  /* NEED_PATCH */
+  ), [[vue__WEBPACK_IMPORTED_MODULE_0__.vModelSelect, $data.job.days]]), _hoisted_29])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" Description "), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_30, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_31, [_hoisted_32, (0,vue__WEBPACK_IMPORTED_MODULE_0__.withDirectives)((0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("textarea", {
     "class": "form-control my-3",
     id: "",
     rows: "10",
-    "onUpdate:modelValue": _cache[4] || (_cache[4] = function ($event) {
+    "onUpdate:modelValue": _cache[5] || (_cache[5] = function ($event) {
       return $data.job.description = $event;
     })
   }, null, 512
   /* NEED_PATCH */
-  ), [[vue__WEBPACK_IMPORTED_MODULE_0__.vModelText, $data.job.description]]), _hoisted_27]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_28, [_hoisted_29, (0,vue__WEBPACK_IMPORTED_MODULE_0__.withDirectives)((0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("input", {
-    type: "text",
-    "class": "form-control",
-    id: "",
-    placeholder: "",
-    "onUpdate:modelValue": _cache[5] || (_cache[5] = function ($event) {
-      return $data.job.url = $event;
-    })
-  }, null, 512
-  /* NEED_PATCH */
-  ), [[vue__WEBPACK_IMPORTED_MODULE_0__.vModelText, $data.job.url]]), _hoisted_30, _hoisted_31]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_32, [_hoisted_33, (0,vue__WEBPACK_IMPORTED_MODULE_0__.withDirectives)((0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("input", {
+  ), [[vue__WEBPACK_IMPORTED_MODULE_0__.vModelText, $data.job.description]]), _hoisted_33])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" Apply Link "), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_34, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_35, [_hoisted_36, (0,vue__WEBPACK_IMPORTED_MODULE_0__.withDirectives)((0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("input", {
     type: "text",
     "class": "form-control",
     id: "",
     placeholder: "",
     "onUpdate:modelValue": _cache[6] || (_cache[6] = function ($event) {
-      return $data.company.name = $event;
+      return $data.job.url = $event;
     })
   }, null, 512
   /* NEED_PATCH */
-  ), [[vue__WEBPACK_IMPORTED_MODULE_0__.vModelText, $data.company.name]]), _hoisted_34]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_35, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_36, [_hoisted_37, (0,vue__WEBPACK_IMPORTED_MODULE_0__.withDirectives)((0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("input", {
+  ), [[vue__WEBPACK_IMPORTED_MODULE_0__.vModelText, $data.job.url]]), _hoisted_37, _hoisted_38])])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_39, [_hoisted_40, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_41, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" Name "), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_42, [_hoisted_43, (0,vue__WEBPACK_IMPORTED_MODULE_0__.withDirectives)((0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("input", {
     type: "text",
     "class": "form-control",
     id: "",
     placeholder: "",
     "onUpdate:modelValue": _cache[7] || (_cache[7] = function ($event) {
-      return $data.company.website = $event;
+      return $data.company.name = $event;
     })
   }, null, 512
   /* NEED_PATCH */
-  ), [[vue__WEBPACK_IMPORTED_MODULE_0__.vModelText, $data.company.website]]), _hoisted_38]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_39, [_hoisted_40, (0,vue__WEBPACK_IMPORTED_MODULE_0__.withDirectives)((0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("input", {
+  ), [[vue__WEBPACK_IMPORTED_MODULE_0__.vModelText, $data.company.name]]), _hoisted_44])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_45, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" Website "), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_46, [_hoisted_47, (0,vue__WEBPACK_IMPORTED_MODULE_0__.withDirectives)((0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("input", {
     type: "text",
     "class": "form-control",
     id: "",
     placeholder: "",
     "onUpdate:modelValue": _cache[8] || (_cache[8] = function ($event) {
-      return $data.company.email = $event;
+      return $data.company.website = $event;
     })
   }, null, 512
   /* NEED_PATCH */
-  ), [[vue__WEBPACK_IMPORTED_MODULE_0__.vModelText, $data.company.email]])])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_41, [_hoisted_42, (0,vue__WEBPACK_IMPORTED_MODULE_0__.withDirectives)((0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("textarea", {
-    "class": "form-control my-3",
-    id: "",
-    rows: "4",
-    "onUpdate:modelValue": _cache[9] || (_cache[9] = function ($event) {
-      return $data.company.description = $event;
-    })
-  }, null, 512
-  /* NEED_PATCH */
-  ), [[vue__WEBPACK_IMPORTED_MODULE_0__.vModelText, $data.company.description]]), _hoisted_43]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_44, [_hoisted_45, (0,vue__WEBPACK_IMPORTED_MODULE_0__.withDirectives)((0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("input", {
+  ), [[vue__WEBPACK_IMPORTED_MODULE_0__.vModelText, $data.company.website]]), _hoisted_48]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" Contact Email "), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_49, [_hoisted_50, (0,vue__WEBPACK_IMPORTED_MODULE_0__.withDirectives)((0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("input", {
     type: "text",
     "class": "form-control",
     id: "",
     placeholder: "",
-    "onUpdate:modelValue": _cache[10] || (_cache[10] = function ($event) {
-      return $data.company.headquarters = $event;
+    "onUpdate:modelValue": _cache[9] || (_cache[9] = function ($event) {
+      return $data.company.email = $event;
     })
   }, null, 512
   /* NEED_PATCH */
-  ), [[vue__WEBPACK_IMPORTED_MODULE_0__.vModelText, $data.company.headquarters]])]), _hoisted_46], 32
+  ), [[vue__WEBPACK_IMPORTED_MODULE_0__.vModelText, $data.company.email]])])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_51, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" company description "), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_52, [_hoisted_53, (0,vue__WEBPACK_IMPORTED_MODULE_0__.withDirectives)((0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("textarea", {
+    "class": "form-control my-3",
+    id: "",
+    rows: "4",
+    "onUpdate:modelValue": _cache[10] || (_cache[10] = function ($event) {
+      return $data.company.description = $event;
+    })
+  }, null, 512
+  /* NEED_PATCH */
+  ), [[vue__WEBPACK_IMPORTED_MODULE_0__.vModelText, $data.company.description]]), _hoisted_54])]), _hoisted_55, _hoisted_56]), _hoisted_57], 32
   /* HYDRATE_EVENTS */
   )]);
 }
