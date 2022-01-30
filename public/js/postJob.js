@@ -23925,16 +23925,7 @@ var searchClient = (0,_meilisearch_instant_meilisearch__WEBPACK_IMPORTED_MODULE_
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   data: function data() {
     return {
-      searchClient: searchClient // searchClient: instantMeiliSearch("http://localhost:7700", ""),
-      // routing: {
-      //   stateMapping: simple(),
-      // },
-      // initialUiState: {
-      //   indexName: {
-      //     query: " ",
-      //   },
-      // },
-
+      searchClient: searchClient
     };
   }
 });
@@ -24752,47 +24743,54 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var vue__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! vue */ "./node_modules/vue/dist/vue.esm-bundler.js");
 
 
-var _hoisted_1 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("header", {
-  "class": "header"
-}, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("h1", {
-  "class": "header-title"
-}, "Search with MeiliSearch")], -1
+var _hoisted_1 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("img", {
+  src: "item.company.logo",
+  alt: "item.company.name",
+  width: "32",
+  height: "32",
+  "class": "rounded-circle flex-shrink-0"
+}, null, -1
 /* HOISTED */
 );
 
-var _hoisted_2 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)(" No results found for the query: ");
+var _hoisted_2 = {
+  "class": "d-flex gap-2 w-100 justify-content-between"
+};
+var _hoisted_3 = {
+  "class": "mb-0"
+};
+var _hoisted_4 = {
+  "class": "mb-0 opacity-75"
+};
+
+var _hoisted_5 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("small", {
+  "class": "opacity-50 text-nowrap"
+}, "now", -1
+/* HOISTED */
+);
 
 function render(_ctx, _cache, $props, $setup, $data, $options) {
   var _component_ais_search_box = (0,vue__WEBPACK_IMPORTED_MODULE_0__.resolveComponent)("ais-search-box");
 
   var _component_ais_hits = (0,vue__WEBPACK_IMPORTED_MODULE_0__.resolveComponent)("ais-hits");
 
-  var _component_ais_state_results = (0,vue__WEBPACK_IMPORTED_MODULE_0__.resolveComponent)("ais-state-results");
-
   var _component_ais_instant_search = (0,vue__WEBPACK_IMPORTED_MODULE_0__.resolveComponent)("ais-instant-search");
 
-  return (0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("div", null, [_hoisted_1, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_ais_instant_search, {
+  return (0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("div", null, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_ais_instant_search, {
     "index-name": "jobs",
     "search-client": $data.searchClient
   }, {
     "default": (0,vue__WEBPACK_IMPORTED_MODULE_0__.withCtx)(function () {
-      return [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" Widgets "), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_ais_search_box), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" <ais-refinement-list attribute=\"jobs\" /> "), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_ais_hits, null, {
+      return [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" Widgets "), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_ais_search_box), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_ais_hits, null, {
         item: (0,vue__WEBPACK_IMPORTED_MODULE_0__.withCtx)(function (_ref) {
           var item = _ref.item;
-          return [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("ul", null, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("h1", null, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)(item.title), 1
+          return [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("ul", null, [_hoisted_1, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_2, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", null, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("h6", _hoisted_3, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)(item.title), 1
           /* TEXT */
-          )])];
-        }),
-        _: 1
-        /* STABLE */
-
-      }), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_ais_state_results, null, {
-        "default": (0,vue__WEBPACK_IMPORTED_MODULE_0__.withCtx)(function (_ref2) {
-          var query = _ref2.state.query,
-              items = _ref2.results.items;
-          return [_hoisted_2, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("q", null, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)(query), 1
+          ), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("p", null, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)(item.company.name), 1
           /* TEXT */
-          )];
+          ), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("p", _hoisted_4, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)(item.type) + " / " + (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)(item.region), 1
+          /* TEXT */
+          )]), _hoisted_5])])];
         }),
         _: 1
         /* STABLE */
@@ -25101,7 +25099,7 @@ __webpack_require__.r(__webpack_exports__);
 
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default()(function(i){return i[1]});
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, "\nbody,\nh1 {\n  margin: 0;\n  padding: 0;\n}\nbody {\n  font-family: -apple-system, BlinkMacSystemFont, \"Segoe UI\", Roboto, Helvetica,\n    Arial, sans-serif, \"Apple Color Emoji\", \"Segoe UI Emoji\", \"Segoe UI Symbol\";\n}\n.header {\n  display: flex;\n  align-jobs: center;\n  min-height: 50px;\n  padding: 0.5rem 1rem;\n  background-image: linear-gradient(to right, #5b0723, #e41359);\n  color: #fff;\n  margin-bottom: 1rem;\n}\n.header-title {\n  font-size: 1.2rem;\n  font-weight: normal;\n}\n.header-subtitle {\n  font-size: 1.2rem;\n}\n.container {\n  padding: 1rem;\n}\n.ais-SearchBox {\n  margin-bottom: 2rem;\n}\n", ""]);
+___CSS_LOADER_EXPORT___.push([module.id, "\n.ais-InstantSearch {\n  margin: auto;\n  margin-top: 2rem;\n  width: 80%;\n}\n.ais-Hits-item {\n  margin: 1rem;\n}\n.ais-SearchBox {\n  margin-bottom: 2rem;\n}\n", ""]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
