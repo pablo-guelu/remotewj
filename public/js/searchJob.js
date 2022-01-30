@@ -30399,28 +30399,25 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ });
 /* harmony import */ var vue__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! vue */ "./node_modules/vue/dist/vue.esm-bundler.js");
 
-
-var _hoisted_1 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("img", {
-  src: "item.company.logo",
-  alt: "item.company.name",
-  width: "32",
-  height: "32",
-  "class": "rounded-circle flex-shrink-0"
-}, null, -1
-/* HOISTED */
-);
-
-var _hoisted_2 = {
+var _hoisted_1 = {
+  "class": "m-3 border rounded-3 shadow-sm w-100"
+};
+var _hoisted_2 = ["href"];
+var _hoisted_3 = ["src", "alt"];
+var _hoisted_4 = {
   "class": "d-flex gap-2 w-100 justify-content-between"
 };
-var _hoisted_3 = {
+var _hoisted_5 = {
   "class": "mb-0"
 };
-var _hoisted_4 = {
+var _hoisted_6 = {
+  "class": "mb-0 opacity-75"
+};
+var _hoisted_7 = {
   "class": "mb-0 opacity-75"
 };
 
-var _hoisted_5 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("small", {
+var _hoisted_8 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("small", {
   "class": "opacity-50 text-nowrap"
 }, "now", -1
 /* HOISTED */
@@ -30441,13 +30438,27 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
       return [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" Widgets "), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_ais_search_box), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_ais_hits, null, {
         item: (0,vue__WEBPACK_IMPORTED_MODULE_0__.withCtx)(function (_ref) {
           var item = _ref.item;
-          return [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("ul", null, [_hoisted_1, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_2, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", null, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("h6", _hoisted_3, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)(item.title), 1
+          return [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_1, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("a", {
+            href: '/jobs/' + item.id,
+            "class": "list-group-item list-group-item-action d-flex gap-3 py-3",
+            "aria-current": "true"
+          }, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("img", {
+            src: item.company.logo,
+            alt: item.company.name,
+            width: "32",
+            height: "32",
+            "class": "rounded-circle flex-shrink-0"
+          }, null, 8
+          /* PROPS */
+          , _hoisted_3), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_4, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", null, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("h6", _hoisted_5, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)(item.title), 1
           /* TEXT */
-          ), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("p", null, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)(item.company.name), 1
+          ), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("p", _hoisted_6, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)(item.company.name), 1
           /* TEXT */
-          ), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("p", _hoisted_4, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)(item.type) + " / " + (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)(item.region), 1
+          ), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("p", _hoisted_7, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)(item.days) + " days", 1
           /* TEXT */
-          )]), _hoisted_5])])];
+          )]), _hoisted_8])], 8
+          /* PROPS */
+          , _hoisted_2)])];
         }),
         _: 1
         /* STABLE */
@@ -30785,7 +30796,7 @@ __webpack_require__.r(__webpack_exports__);
 
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default()(function(i){return i[1]});
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, "\n.ais-InstantSearch {\n  margin: auto;\n  margin-top: 2rem;\n  width: 80%;\n}\n.ais-Hits-item {\n  margin: 1rem;\n}\n.ais-SearchBox {\n  margin-bottom: 2rem;\n}\n", ""]);
+___CSS_LOADER_EXPORT___.push([module.id, "\n.ais-InstantSearch {\n  margin: auto;\n  margin-top: 2rem;\n  width: 80%;\n}\n.ais-Hits-item {\n  box-shadow: none;\n  padding: 0;\n}\n.ais-SearchBox {\n  margin-bottom: 2rem;\n}\n", ""]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
