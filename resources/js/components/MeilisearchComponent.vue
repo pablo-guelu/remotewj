@@ -1,33 +1,38 @@
 <template>
   <div>
-    <header class="header">
-      <h1 class="header-title">Search with MeiliSearch</h1>
-    </header>
-    <ais-instant-search
-      index-name="jobs"
-      :search-client="searchClient"
-      
-    >
+    <ais-instant-search index-name="jobs" :search-client="searchClient">
       <!-- Widgets -->
       <ais-search-box />
-      <!-- <ais-refinement-list attribute="jobs" /> -->
 
       <ais-hits>
         <template v-slot:item="{ item }">
-          <ul>
-            
-              <h1>{{ item.title }}</h1>
-            
-          </ul>
+          <div class="m-3 border rounded-3 shadow-sm w-100">
+            <a
+              :href="'/jobs/' + item.id"
+              class="list-group-item list-group-item-action d-flex gap-3 py-3"
+              aria-current="true"
+            >
+              <img
+                :src="item.company.logo"
+                :alt="item.company.name"
+                width="32"
+                height="32"
+                class="rounded-circle flex-shrink-0"
+              />
+              <div class="d-flex gap-2 w-100 justify-content-between">
+                <div>
+                  <h6 class="mb-0">{{ item.title }}</h6>
+                  <p class="mb-0 opacity-75">
+                    {{ item.company.name }}
+                  </p>
+                  <p class="mb-0 opacity-75">{{ item.days }} days</p>
+                </div>
+                <small class="opacity-50 text-nowrap">now</small>
+              </div>
+            </a>
+          </div>
         </template>
       </ais-hits>
-      <ais-state-results>
-        <template
-          v-slot="{ state: { query }, results: { items } }"
-        >
-          No results found for the query: <q>{{ query }}</q>
-        </template>
-      </ais-state-results>
     </ais-instant-search>
   </div>
 </template>
@@ -41,50 +46,22 @@ const searchClient = instantMeiliSearch("http://localhost:7700", "");
 export default {
   data() {
     return {
-      searchClient
-      // searchClient: instantMeiliSearch("http://localhost:7700", ""),
-      // routing: {
-      //   stateMapping: simple(),
-      // },
-      // initialUiState: {
-      //   indexName: {
-      //     query: " ",
-      //   },
-      // },
+      searchClient,
     };
   },
 };
 </script>
 
 <style>
-body,
-h1 {
-  margin: 0;
-  padding: 0;
-}
-body {
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica,
-    Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+.ais-InstantSearch {
+  margin: auto;
+  margin-top: 2rem;
+  width: 80%;
 }
 
-.header {
-  display: flex;
-  align-jobs: center;
-  min-height: 50px;
-  padding: 0.5rem 1rem;
-  background-image: linear-gradient(to right, #5b0723, #e41359);
-  color: #fff;
-  margin-bottom: 1rem;
-}
-.header-title {
-  font-size: 1.2rem;
-  font-weight: normal;
-}
-.header-subtitle {
-  font-size: 1.2rem;
-}
-.container {
-  padding: 1rem;
+.ais-Hits-item {
+  box-shadow: none;
+  padding: 0;
 }
 
 .ais-SearchBox {

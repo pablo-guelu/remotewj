@@ -25,7 +25,11 @@ Route::get('/', function () {
 // });
 
 Route::get('/searchJob', function () {
-    return view('searchJob', ['jobs' => Job::all()]);
+    $jobs = Job::all();
+    $jobs->load('company');
+    // dd($jobs);
+    $jobs->searchable();
+    return view('searchJob', ['jobs' => $jobs]);
 })->name('search');
 
 Route::get('/postJob', function () {

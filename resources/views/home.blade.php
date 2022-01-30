@@ -48,7 +48,7 @@
                                 {{$job->company->name}}
                             </p>
                             <p class="mb-0 opacity-75">
-                                {{$job->type}} / {{$job->region}}
+                                {{$job->days}} days
                             </p>
                         </div>
                         <small class="opacity-50 text-nowrap">now</small>

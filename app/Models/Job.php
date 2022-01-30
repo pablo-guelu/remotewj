@@ -36,11 +36,12 @@ class Job extends Model
     {
         $array = $this->toArray();
 
-        $array['primaryKey'] = $this->id;
+        $array['company'] = $this->company;
 
         // dd($array);
 
         return $array;
     }
+
 
 }

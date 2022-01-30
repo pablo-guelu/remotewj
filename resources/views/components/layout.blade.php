@@ -7,8 +7,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Remote Weekend Job</title>
 
-     <!-- Bootstrap CSS -->
-     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+
+    <!-- full Satellite theme -job search -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/instantsearch.css@7.4.5/themes/satellite-min.css" integrity="sha256-TehzF/2QvNKhGQrrNpoOb2Ck4iGZ1J/DI4pkd2oUsBc=" crossorigin="anonymous">
 
     <link rel="stylesheet" type="text/css" href="{{ mix('css/app.css') }}">
 
@@ -45,7 +48,7 @@
                 ">
                 <a href="/" class="d-flex align-items-center text-dark text-decoration-none">
                     <img src="/img/earth.svg" alt="logo" style="height: 6vh" class="m-2" />
-                    <span class="fs-4" style="font-weight: bold;">Remote Weekend Job</span>
+                    <span class="fs-2" style="font-weight: bold;">RWJ</span>
                 </a>
 
                 <nav class="d-inline-flex mt-2 mt-md-0 ms-md-auto">
@@ -54,6 +57,7 @@
                         <a href="/searchJob">
                             <button class="btn btn-primary btn-lg btn-block">
                                 Search Jobs on Weekends
+                                <span>🔎</span>
                             </button>
                         </a>
                     </div>
@@ -62,6 +66,7 @@
                         <a href="/postJob">
                             <button class="btn btn-success btn-lg btn-block">
                                 Post a Job
+                                <span>🤖</span>
                             </button>
                         </a>
                     </div>
