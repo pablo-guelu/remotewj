@@ -26,8 +26,6 @@ Route::get('/', function () {
 
 Route::get('/searchJob', function () {
     $jobs = Job::all();
-    $jobs->load('company');
-    // dd($jobs);
     $jobs->searchable();
     return view('searchJob', ['jobs' => $jobs]);
 })->name('search');
@@ -35,6 +33,10 @@ Route::get('/searchJob', function () {
 Route::get('/postJob', function () {
     return view('postJob');
 })->name('post');
+
+Route::get('/login', function () {
+    return view('login');
+})->name('login');
 
 Route::get('/jobs/{id}', function ($id) {
     return view('jobDetail', ['job' => Job::find($id)]);
