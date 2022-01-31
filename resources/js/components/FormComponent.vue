@@ -84,12 +84,13 @@
         <div class="row mt-5">
           <div class="form-group col p-3">
             <h5>Job Description <span>⌨</span></h5>
-            <textarea
+            <tinymce class="mb-3"></tinymce>
+            <!-- <textarea
               class="form-control my-3"
-              id=""
+              id="descriptionEditor"
               rows="10"
               v-model="job.description"
-            ></textarea>
+            ></textarea> -->
             <div id="invalidJobDescription" class="invalid-feedback">
               Please enter a job description
             </div>
@@ -168,10 +169,10 @@
         <div class="row">
           <!-- company description -->
           <div class="form-group col p-3">
-            <h5>Company Description <span>⌨</span></h5>
+            <h5>Company Brief Description <span>⌨</span></h5>
             <textarea
               class="form-control my-3"
-              id=""
+              id="basic-example"
               rows="4"
               v-model="company.description"
             ></textarea>
@@ -198,6 +199,8 @@
 </template>
 
 <script>
+
+
 let defaultJob = {
   id: null,
   title: "",
@@ -222,9 +225,20 @@ let defaultCompany = {
   description: "",
 };
 
+import tinymce from './tinyMCE'
+
 export default {
+
+  components: {
+    tinymce
+  },
+  
   data() {
+
+
+
     return {
+     
       job: Object.assign({}, defaultJob),
       company: Object.assign({}, defaultCompany),
 
@@ -352,7 +366,6 @@ export default {
   },
 
   methods: {
-    // newJob() {},
 
     checkForm(e) {
       if (!this.job.title) {
