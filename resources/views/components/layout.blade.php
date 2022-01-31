@@ -70,6 +70,15 @@
                             </button>
                         </a>
                     </div>
+
+                    <div class="mx-3">
+                        <a href="/login">
+                            <button class="btn btn-outline-success btn-lg btn-block">
+                                Sing in
+                                <span>🚪</span>
+                            </button>
+                        </a>
+                    </div>
                 </nav>
             </div>
         </header>
